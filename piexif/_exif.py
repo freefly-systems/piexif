@@ -281,6 +281,7 @@ TAGS = {
              42035: {'name': 'LensMake', 'type': TYPES.Ascii},
              42036: {'name': 'LensModel', 'type': TYPES.Ascii},
              42037: {'name': 'LensSerialNumber', 'type': TYPES.Ascii},
+             42080: {'name': 'CompositeImage', 'type': TYPES.Short},
              42240: {'name': 'Gamma', 'type': TYPES.Rational}},
     'GPS': {0: {'name': 'GPSVersionID', 'type': TYPES.Byte},
                 1: {'name': 'GPSLatitudeRef', 'type': TYPES.Ascii},
@@ -314,7 +315,8 @@ TAGS = {
                 29: {'name': 'GPSDateStamp', 'type': TYPES.Ascii},
                 30: {'name': 'GPSDifferential', 'type': TYPES.Short},
                 31: {'name': 'GPSHPositioningError', 'type': TYPES.Rational}},
-    'Interop': {1: {'name': 'InteroperabilityIndex', 'type': TYPES.Ascii}},
+    'Interop': {1: {'name': 'InteroperabilityIndex', 'type': TYPES.Ascii},
+                2: {'name': 'InteroperabilityVersion', 'type': TYPES.Undefined}},
 }
 
 TAGS["0th"] = TAGS["Image"]
@@ -594,6 +596,7 @@ class ExifIFD:
     LensMake = 42035
     LensModel = 42036
     LensSerialNumber = 42037
+    CompositeImage = 42080
     Gamma = 42240
 
 
@@ -636,3 +639,4 @@ class GPSIFD:
 class InteropIFD:
     """Exif tag number reference - Interoperability IFD"""
     InteroperabilityIndex = 1
+    InteroperabilityVersion = 2
